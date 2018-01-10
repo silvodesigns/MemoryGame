@@ -80,6 +80,7 @@ function updateMoves(score) {
 function displaySymbol(card) {
 
     card.classList.add("open", "show");
+    card.children[0].style.visibility ="visible";
 
 
 }
@@ -102,6 +103,7 @@ button.addEventListener('click', function() {
 
         Cards[i].classList.remove("match", "ani"); //remove these classes when cards are shuffled
         Cards[i].classList.remove("open", "show");
+        Cards[i].children[0].style.visibility ="hidden";
 
     }
 
@@ -117,6 +119,7 @@ button.addEventListener('click', function() {
 
     const screen = document.getElementsByClassName("win");
     screen[0].style.display = "none";
+
 });
 
 
@@ -131,7 +134,7 @@ function addToList(card) {
     if (openCards.length > 1) {
 
         //check for the classes on both cards to check if the symbol is the same.
-        if (openCards[0].childNodes[1].classList[1] == openCards[1].childNodes[1].classList[1]) {
+        if (openCards[0].children[0].classList.value == openCards[1].children[0].classList.value) {
             console.log("they are the same");
             //if they are the same lets remove it from the openCards array to the matchCards array
             matchCards.push(openCards[0]);
@@ -149,6 +152,8 @@ function addToList(card) {
             setTimeout(function() {
                 openCards[0].classList.remove("open", "show");
                 openCards[1].classList.remove("open", "show");
+                openCards[0].children[0].style.visibility ="hidden";
+                openCards[1].children[0].style.visibility ="hidden";
                 openCards.length = 0;
                 updateMoves("1");
 

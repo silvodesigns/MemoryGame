@@ -1,5 +1,6 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Matching Game</title>
@@ -8,83 +9,78 @@
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
 
+<body>
     <div class="container">
         <header>
-            <h1>Matching Game</h1>
+            <h1>POKEBALLS MEMORY MASTER</h1>
         </header>
-
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
-
-        	<span id="moves">0</span> Moves
-
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span id="moves">0</span> Moves
             <div id="reset" class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
+                <i class="fa fa-repeat"></i>
+            </div>
         </section>
-
         <ul id="deck" class="deck">
             <li class="card">
-                <i class="fa fa-diamond"></i>
+                <img class="ball0" src="img/ball0.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
+                <img class="ball0" src="img/ball0.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+                <img class="ball1" src="img/ball1.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-bolt"></i>
+                <img class="ball1" src="img/ball1.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-cube"></i>
+                <img class="ball2" src="img/ball2.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-anchor"></i>
+                <img class="ball2" src="img/ball2.png"></img>
             </li>
             <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
+                <img class="ball3" src="img/ball3.png"></img>
+                <li class="card">
+                    <img class="ball3" src="img/ball3.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball4" src="img/ball4.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball4" src="img/ball4.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball5" src="img/ball5.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball5" src="img/ball5.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball6" src="img/ball6.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball6" src="img/ball6.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball7" src="img/ball7.png"></img>
+                </li>
+                <li class="card">
+                    <img class="ball7" src="img/ball7.png"></img>
+                </li>
         </ul>
     </div>
     <div class="win">
-    	<h1>You have won!</h1>
-    	<button id="play">Play Again</button>
+        <h1>You have won!</h1>
+        <button id="play">Play Again</button>
     </div>
-
     <script src="js/app.js"></script>
 </body>
+
 </html>
