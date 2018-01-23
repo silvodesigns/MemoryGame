@@ -23,14 +23,14 @@ function myTimer() {
     if (currentSec > 59) {
 
         seconds.innerHTML = 0;
-        minutes.innerHTML = currentMin + 1 + ":";
+        minutes.innerHTML = currentMin + 1;
 
     }
 
     if (currentMin > 59) {
 
         minutes.innerHTML = 0;
-        hours.innerHTML = currentHours + 1 + ":";
+        hours.innerHTML = currentHours + 1;
 
 
     }
@@ -54,8 +54,6 @@ function resetTimer(){
 
 
 }
-
-
 
 
 /*
@@ -225,7 +223,9 @@ function won() {
 
         <h2>final time</h2>
         <span>`+finalHour+`</span>
+        <span>:</span>
         <span>`+finalMin+`</span>
+        <span>:</span>
         <span>`+finalSec+`</span>
 
 
@@ -392,6 +392,39 @@ for (i = 0; i < Cards.length; i++) {
                 screen[0].innerHTML ="";
                 screen[0].classList.add("hide-it");
                      }
+
+
+
+            if (event.target.className.toLowerCase() === 'play') {     
+
+               const toHide = document.getElementsByClassName("welcome-screen");
+                     toHide[0].classList.add("move-it");
+
+
+
+
+
+              } 
+
+
+            if (event.target.className.toLowerCase() === 'instruction') {     
+
+               const toShow = document.getElementsByClassName("how-to-play");
+                     toShow[0].classList.add("show-it");
+
+
+
+
+
+              }     
             }); 
+
+
+
+
+
+
+
+
 
 
