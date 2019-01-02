@@ -85,7 +85,7 @@ h1 {
 }
 
 .hide-it{
-    visibility:hidden;
+    display:none;
 }
 
 /*
@@ -107,7 +107,7 @@ h1 {
 
 .score-panel .stars li {
     list-style: none;
-    display: inline-block;
+    display:inline-block;
 }
 
 .score-panel .restart {

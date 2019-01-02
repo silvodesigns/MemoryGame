@@ -174,7 +174,7 @@ function won() {
 
 
 
-        //these conditional statements below check the remaining starts at end of game and displayes score accordingly
+        //these conditional statements below check the remaining starts at end of game and displays score accordingly
         if(starts[0].children.length == 3){
             document.getElementById("final-score").innerHTML =`
                 <h2>final score</h2>
@@ -301,6 +301,8 @@ function addToList(card) {
     }
 
 }
+
+//Decreases the amount of stars displayed depending on current score.
 
 function rating() {
 
