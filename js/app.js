@@ -10,7 +10,6 @@ const seconds = document.getElementById("seconds");// these following 3 variable
 const minutes = document.getElementById("minutes");//
 const hours = document.getElementById("hours");//
 
-
 //sets a timer on the page
 function myTimer() {
 
@@ -48,9 +47,6 @@ function resetTimer(){
     hours.innerHTML = "0";
 
     myVar = setInterval(myTimer, 1000);//set timer again
-
-
-
 
 
 }
@@ -303,16 +299,25 @@ function addToList(card) {
 }
 
 //Decreases the amount of stars displayed depending on current score.
-
 function rating() {
 
-    if (parseInt(moves.textContent) > 21) {
-        starts[0].children[0].classList.add("hide-it");
+    if (parseInt(moves.textContent) > 15) {
+
+     if(starts[0].children.length == 3){
+
+       var remove = document.getElementById('stars');
+       var toRemove = remove.firstChild;
+       toRemove.remove();   }
 
     }
     if (parseInt(moves.textContent) > 28) {
-        starts[0].children[1].classList.add("hide-it");
 
+       if(starts[0].children.length == 2 ){
+
+       var remove = document.getElementById('stars');
+       var toRemove = remove.firstChild;
+       toRemove.remove();  }
+       
     }
 
 
