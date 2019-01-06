@@ -407,6 +407,10 @@ for (i = 0; i < Cards.length; i++) {
                const toHide = document.getElementsByClassName("welcome-screen");
                      toHide[0].classList.add("move-it");
 
+               const audio = document.getElementById('theme');
+                             audio.volume = 0.1;
+                             audio.play();
+
 
 
 
