@@ -10,7 +10,7 @@ const seconds = document.getElementById("seconds");// these following 3 variable
 const minutes = document.getElementById("minutes");//
 const hours = document.getElementById("hours");//
 
-//sets a timer on the page
+//sets a timer 
 function myTimer() {
 
     const currentSec = parseInt(seconds.textContent);
@@ -301,13 +301,13 @@ function addToList(card) {
 //Decreases the amount of stars displayed depending on current score.
 function rating() {
 
-    if (parseInt(moves.textContent) > 15) {
+    if (parseInt(moves.textContent) > 15) {// if the moves are greater than 15 and 
 
-     if(starts[0].children.length == 3){
+     if(starts[0].children.length == 3){//if the amount of divs containing starts in the DOM equals 3 then
 
        var remove = document.getElementById('stars');
        var toRemove = remove.firstChild;
-       toRemove.remove();   }
+       toRemove.remove();   }// go ahead and remove one of the stars
 
     }
     if (parseInt(moves.textContent) > 28) {
