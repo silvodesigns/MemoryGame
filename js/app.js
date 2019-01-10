@@ -408,9 +408,8 @@ for (i = 0; i < Cards.length; i++) {
                      toHide[0].classList.add("move-it");
 
                const audio = document.getElementById('theme');
-                             audio.volume = 0.1;
+                             audio.volume = 0.3;
                              audio.play();
-
 
 
 
