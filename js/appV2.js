@@ -2,8 +2,6 @@ class PokeBalls{
     constructor(pokeCard){
         this.pokeCard = pokeCard;
         this.pokeType = pokeCard.dataset.ball;
-        this.opened = [];
-        this.matched = [];
 
         this.pokeCard.addEventListener('click', () => this.displaySymbol());
         this.pokeCard.addEventListener('click', () => this.addToList());
@@ -17,40 +15,42 @@ class PokeBalls{
     }
 
     addToList(){
-        this.opened.push(this.pokeCard);
-        if(this.opened.length > 1){
+        opened.push(this.pokeCard);
+        if(opened.length > 1){
              opened.splice(2, 1);
              this.compare();
 
-        }    
+       }    
     }
 
 
     compare(){
 
-        if(this.opened[0].dataset.ball == this.opened[1].dataset.ball){
+        if(opened[0].dataset.ball == opened[1].dataset.ball && opened[0].getAttribute("id") != opened[1].getAttribute("id")){
             console.log("they are the same");
-            if (this.matched.indexOf(this.opened[0]) > -1 && this.matched.indexOf(this.opened[1]) > -1) {
+            if (matched.indexOf(opened[0]) > -1 && matched.indexOf(opened[1]) > -1) {
                 console.log("dont push");
             } else {
 
-                this.opened.forEach(function(element){
-                        matchedCards.push(element);
+                opened.forEach(function(element){
+                        matched.push(element);
                         element.classList.add('match','ani');
                 })
 
             }
-
-            this.opened.length = 0;
+                //empty the array holding the opened pokeball cards once comparison logic is run
+                opened.length = 0;
 
 
         } else {
             console.log("we do not match");
             setTimeout(function(){
-                this.opened.forEach(function(element){
+                opened.forEach(function(element){
                     element.classList.remove('open');
                     element.children[0].classList.add('hide-it');
                 });
+
+                opened.length = 0;
 
             },300)
         }
@@ -66,6 +66,8 @@ class PokeBalls{
 
 
 let pokeballs = document.querySelectorAll('.card');
+let opened =[];
+let matched =[];
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
 });
