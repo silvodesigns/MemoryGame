@@ -5,6 +5,9 @@ class PokeBalls{
         this.opened = [];
         this.matched = [];
 
+        this.pokeCard.addEventListener('click', () => this.displaySymbol());
+        this.pokeCard.addEventListener('click', () => this.addToList());
+
     }
 
     displaySymbol(){
@@ -33,19 +36,38 @@ class PokeBalls{
 
                 this.opened.forEach(function(element){
                         matchedCards.push(element);
+                        element.classList.add('match','ani');
                 })
-                
+
             }
 
+            this.opened.length = 0;
+
+
+        } else {
+            console.log("we do not match");
+            setTimeout(function(){
+                this.opened.forEach(function(element){
+                    element.classList.remove('open');
+                    element.children[0].classList.add('hide-it');
+                });
+
+            },300)
         }
 
 
     }
 
 
-   // this.pokeCard.addEventListener('click', () => this.displaySymbol());
+   
 
 }
 
+
+
+let pokeballs = document.querySelectorAll('.card');
+pokeballs.forEach(function(ball){
+    return new PokeBalls(ball);
+});
 
 
