@@ -2,9 +2,9 @@ class PokeBalls{
     constructor(pokeCard){
         this.pokeCard = pokeCard;
         this.pokeType = pokeCard.dataset.ball;
-
         this.pokeCard.addEventListener('click', () => this.displaySymbol());
         this.pokeCard.addEventListener('click', () => this.addToList());
+        this.pokeCard.addEventListener('click', () => this.updateMoves());
 
     }
 
@@ -58,16 +58,20 @@ class PokeBalls{
 
     }
 
+      updateMoves(){
+          if(this.pokeCard.classList.contains('match') == false){
+                const movesValue = moves.textContent;
+                const updatedValue = parseInt(movesValue) + 1;
+                moves.innerHTML = updatedValue;
 
-   
+          }
 
+     }
 }
-
-
-
 let pokeballs = document.querySelectorAll('.card');
 let opened =[];
 let matched =[];
+let moves = document.getElementById("moves");
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
 });

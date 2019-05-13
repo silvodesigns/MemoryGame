@@ -104,18 +104,18 @@ reset.addEventListener('click', function() {
 });
 
 //Update moves on the board
-function updateMoves(card) {
+// function updateMoves(card) {
 
 
 
-    if (card.classList.contains("match") == false) {
-        const movesValue = moves.textContent;
-        const newValue = parseInt(movesValue) + 1;
-        moves.innerHTML = newValue;
+//     if (card.classList.contains("match") == false) {
+//         const movesValue = moves.textContent;
+//         const newValue = parseInt(movesValue) + 1;
+//         moves.innerHTML = newValue;
 
-    }
+//     }
 
-}
+// }
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -129,13 +129,13 @@ function updateMoves(card) {
  */
 
 //displaySymbol function displays the card's symbol when it is opened
-function displaySymbol(card) {
+// function displaySymbol(card) {
 
-    card.classList.add("open");
-    card.children[0].classList.remove("hide-it");
+//     card.classList.add("open");
+//     card.children[0].classList.remove("hide-it");
 
 
-}
+// }
 
 //won function displays a screen to the user after the game has been won
 function won() {
@@ -284,7 +284,7 @@ function compare() {
 }
 
 
-// AddToList function adds the cliked cards into an array temporarily to check weather the clicked cards match or no
+//AddToList function adds the cliked cards into an array temporarily to check weather the clicked cards match or no
 function addToList(card) {
 
     //push the clicked card into an array/ detele any entry greater than two
@@ -324,18 +324,18 @@ function rating() {
 }
 
 
-// Add event listener to each of the cards
-for (i = 0; i < Cards.length; i++) {
-    Cards[i].addEventListener('click', function() {
+// // Add event listener to each of the cards
+// for (i = 0; i < Cards.length; i++) {
+//     Cards[i].addEventListener('click', function() {
 
-        displaySymbol(this);
-        addToList(this);
-        updateMoves(this);
-        rating();
+//         displaySymbol(this);
+//         addToList(this);
+//         updateMoves(this);
+//         rating();
 
 
-    });
-}
+//     });
+// }
   var myVar = setInterval(myTimer, 1000);
   document.querySelector('body').addEventListener('click', function(event) {
             if (event.target.tagName.toLowerCase() === 'button') {
