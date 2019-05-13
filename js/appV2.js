@@ -42,7 +42,7 @@ class PokeBalls{
             }
                 //empty the array holding the opened pokeball cards once comparison logic is run
                 opened.length = 0;
-
+            this.won();
 
         } else {
             console.log("we do not match");
@@ -62,8 +62,13 @@ class PokeBalls{
 
       updateMoves(){
           if(this.pokeCard.classList.contains('match') == false){
+
                 const movesValue = moves.textContent;
                 const updatedValue = parseInt(movesValue) + 1;
+                //start the timer once at least a move has been done
+                if(updatedValue == 1){
+                   timer = setInterval(this.myTimer,1000);
+                }
                 moves.innerHTML = updatedValue;
 
           }
@@ -76,30 +81,72 @@ class PokeBalls{
     
          //if the amount of divs containing starts in the DOM equals 3 then
          if(starts[0].children.length == 3){
-    
-           let remove = document.getElementById('stars');
-           let toRemove = remove.firstChild;
-           toRemove.remove();   }// go ahead and remove one of the stars
-    
+            
+                let remove = document.getElementById('stars');
+                let toRemove = remove.firstChild;
+                toRemove.remove();   }// go ahead and remove one of the stars
+            
         }
         if (parseInt(moves.textContent) > 28) {
     
            if(starts[0].children.length == 2 ){
     
-           var remove = document.getElementById('stars');
-           var toRemove = remove.firstChild;
-           toRemove.remove();  }
-           
+                var remove = document.getElementById('stars');
+                var toRemove = remove.firstChild;
+                toRemove.remove();  }
+                
         }
     
     
     }
+        myTimer() {
+
+            const currentSec = parseInt(seconds.textContent);
+            const currentMin = parseInt(minutes.textContent);
+            const currentHour = parseInt(hours.textContent);
+        
+            seconds.innerHTML =  currentSec + 1 ;
+        
+            if (currentSec > 59) {
+        
+                seconds.innerHTML = 0;
+                minutes.innerHTML = currentMin + 1;
+        
+            }
+        
+            if (currentMin > 59) {
+        
+                minutes.innerHTML = 0;
+                hours.innerHTML = currentHours + 1;
+        
+        
+            }
+        
+        }
+
+
+        won(){
+            if(matched.length == 16){
+                //stop timer if all cards have been matched
+                clearInterval(timer);
+                alert("You have Won");
+            }
+
+            
+        }
+        
 }
 let pokeballs = document.querySelectorAll('.card');
 let opened =[];
 let matched =[];
 let moves = document.getElementById("moves");
-const starts = document.getElementsByClassName("stars");//holds all the starts displayed on page
+let starts = document.getElementsByClassName("stars");
+// these following 3 variables hold the elements holding current timer 
+let seconds = document.getElementById("seconds");
+let minutes = document.getElementById("minutes");
+let hours = document.getElementById("hours");
+var timer;
+
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
 });

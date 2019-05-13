@@ -11,30 +11,30 @@ const minutes = document.getElementById("minutes");//
 const hours = document.getElementById("hours");//
 
 //sets a timer 
-function myTimer() {
+// function myTimer() {
 
-    const currentSec = parseInt(seconds.textContent);
-    const currentMin = parseInt(minutes.textContent);
-    const currentHour = parseInt(hours.textContent);
+//     const currentSec = parseInt(seconds.textContent);
+//     const currentMin = parseInt(minutes.textContent);
+//     const currentHour = parseInt(hours.textContent);
 
-    seconds.innerHTML =  currentSec + 1 ;
+//     seconds.innerHTML =  currentSec + 1 ;
 
-    if (currentSec > 59) {
+//     if (currentSec > 59) {
 
-        seconds.innerHTML = 0;
-        minutes.innerHTML = currentMin + 1;
+//         seconds.innerHTML = 0;
+//         minutes.innerHTML = currentMin + 1;
 
-    }
+//     }
 
-    if (currentMin > 59) {
+//     if (currentMin > 59) {
 
-        minutes.innerHTML = 0;
-        hours.innerHTML = currentHours + 1;
+//         minutes.innerHTML = 0;
+//         hours.innerHTML = currentHours + 1;
 
 
-    }
+//     }
 
-}
+// }
 
 
 function resetTimer(){
@@ -336,7 +336,7 @@ function won() {
 
 //     });
 // }
-  var myVar = setInterval(myTimer, 1000);
+//   var myVar = setInterval(myTimer, 1000);
   document.querySelector('body').addEventListener('click', function(event) {
             if (event.target.tagName.toLowerCase() === 'button') {
               // do your action on your 'li' or whatever it is you're listening for
