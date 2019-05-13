@@ -245,83 +245,83 @@ function won() {
 
 
 
-function compare() {
+// function compare() {
 
-    //check for the classes on both cards to check if the pokeall images are the same.
-    if (openCards[0].children[0].classList.value == openCards[1].children[0].classList.value && openCards[0].getAttribute("id") != openCards[1].getAttribute("id")) {
-        console.log("they are the same");
-        //to avoid inserting match cards twice in the array matchCards lets make sure they dont exist before pushing
-        if (matchCards.indexOf(openCards[0]) > -1 && matchCards.indexOf(openCards[1]) > -1) {
-            console.log("dont push");
-        } else {
-            matchCards.push(openCards[0]);
-            matchCards.push(openCards[1]);
-        }
-
-
-        //if they are the same lets remove it from the openCards array to the matchCards array
-        openCards[0].classList.add("match", "ani");
-        openCards[1].classList.add("match", "ani");
-        openCards.length = 0; //empty the openCards array
-        won();
+//     //check for the classes on both cards to check if the pokeall images are the same.
+//     if (openCards[0].children[0].classList.value == openCards[1].children[0].classList.value && openCards[0].getAttribute("id") != openCards[1].getAttribute("id")) {
+//         console.log("they are the same");
+//         //to avoid inserting match cards twice in the array matchCards lets make sure they dont exist before pushing
+//         if (matchCards.indexOf(openCards[0]) > -1 && matchCards.indexOf(openCards[1]) > -1) {
+//             console.log("dont push");
+//         } else {
+//             matchCards.push(openCards[0]);
+//             matchCards.push(openCards[1]);
+//         }
 
 
-    } else {
-        console.log("they are not the same");
-        // if they do not match lets hide the cards on the table and set a little timer before it happens
-        setTimeout(function() {
-            openCards[0].classList.remove("open");
-            openCards[1].classList.remove("open");
-            openCards[0].children[0].classList.add("hide-it");
-            openCards[1].children[0].classList.add("hide-it");
-            openCards.length = 0; //empty the openCards array
+//         //if they are the same lets remove it from the openCards array to the matchCards array
+//         openCards[0].classList.add("match", "ani");
+//         openCards[1].classList.add("match", "ani");
+//         openCards.length = 0; //empty the openCards array
+//         won();
 
 
-        }, 300);
+//     } else {
+//         console.log("they are not the same");
+//         // if they do not match lets hide the cards on the table and set a little timer before it happens
+//         setTimeout(function() {
+//             openCards[0].classList.remove("open");
+//             openCards[1].classList.remove("open");
+//             openCards[0].children[0].classList.add("hide-it");
+//             openCards[1].children[0].classList.add("hide-it");
+//             openCards.length = 0; //empty the openCards array
 
 
-    }
-}
+//         }, 300);
 
 
-//AddToList function adds the cliked cards into an array temporarily to check weather the clicked cards match or no
-function addToList(card) {
-
-    //push the clicked card into an array/ detele any entry greater than two
-    openCards.push(card);
-    if (openCards.length > 1) {
-        openCards.splice(2, 1);
-        compare();
+//     }
+// }
 
 
-    }
+// //AddToList function adds the cliked cards into an array temporarily to check weather the clicked cards match or no
+// function addToList(card) {
 
-}
+//     //push the clicked card into an array/ detele any entry greater than two
+//     openCards.push(card);
+//     if (openCards.length > 1) {
+//         openCards.splice(2, 1);
+//         compare();
+
+
+//     }
+
+// }
 
 //Decreases the amount of stars displayed depending on current score.
-function rating() {
+// function rating() {
 
-    if (parseInt(moves.textContent) > 15) {// if the moves are greater than 15 and 
+//     if (parseInt(moves.textContent) > 15) {// if the moves are greater than 15 and 
 
-     if(starts[0].children.length == 3){//if the amount of divs containing starts in the DOM equals 3 then
+//      if(starts[0].children.length == 3){//if the amount of divs containing starts in the DOM equals 3 then
 
-       var remove = document.getElementById('stars');
-       var toRemove = remove.firstChild;
-       toRemove.remove();   }// go ahead and remove one of the stars
+//        var remove = document.getElementById('stars');
+//        var toRemove = remove.firstChild;
+//        toRemove.remove();   }// go ahead and remove one of the stars
 
-    }
-    if (parseInt(moves.textContent) > 28) {
+//     }
+//     if (parseInt(moves.textContent) > 28) {
 
-       if(starts[0].children.length == 2 ){
+//        if(starts[0].children.length == 2 ){
 
-       var remove = document.getElementById('stars');
-       var toRemove = remove.firstChild;
-       toRemove.remove();  }
+//        var remove = document.getElementById('stars');
+//        var toRemove = remove.firstChild;
+//        toRemove.remove();  }
        
-    }
+//     }
 
 
-}
+// }
 
 
 // // Add event listener to each of the cards

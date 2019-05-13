@@ -5,6 +5,8 @@ class PokeBalls{
         this.pokeCard.addEventListener('click', () => this.displaySymbol());
         this.pokeCard.addEventListener('click', () => this.addToList());
         this.pokeCard.addEventListener('click', () => this.updateMoves());
+        this.pokeCard.addEventListener('click', () => this.rating());
+
 
     }
 
@@ -67,11 +69,37 @@ class PokeBalls{
           }
 
      }
+
+    rating() {
+        // if the moves are greater than 15 and 
+        if (parseInt(moves.textContent) > 15) {
+    
+         //if the amount of divs containing starts in the DOM equals 3 then
+         if(starts[0].children.length == 3){
+    
+           let remove = document.getElementById('stars');
+           let toRemove = remove.firstChild;
+           toRemove.remove();   }// go ahead and remove one of the stars
+    
+        }
+        if (parseInt(moves.textContent) > 28) {
+    
+           if(starts[0].children.length == 2 ){
+    
+           var remove = document.getElementById('stars');
+           var toRemove = remove.firstChild;
+           toRemove.remove();  }
+           
+        }
+    
+    
+    }
 }
 let pokeballs = document.querySelectorAll('.card');
 let opened =[];
 let matched =[];
 let moves = document.getElementById("moves");
+const starts = document.getElementsByClassName("stars");//holds all the starts displayed on page
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
 });
