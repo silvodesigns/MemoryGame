@@ -6,7 +6,7 @@ class PokeBalls{
         this.pokeCard.addEventListener('click', () => this.addToList());
         this.pokeCard.addEventListener('click', () => this.updateMoves());
         this.pokeCard.addEventListener('click', () => this.rating());
-        reset.addEventListener('click', ()  => this.resetTimer(pokeCard));
+        reset.addEventListener('click', ()  => this.resetTimer());
         reset.addEventListener('click', ()  => this.renderShuffled());
 
 
@@ -68,11 +68,13 @@ class PokeBalls{
                 const movesValue = moves.textContent;
                 const updatedValue = parseInt(movesValue) + 1;
                 //start the timer once at least a move has been done
-                if(updatedValue == 1){
+                if(updatedValue == 2){
                    timer = setInterval(this.myTimer,1000);
-                }
-                moves.innerHTML = updatedValue;
 
+                }
+
+                moves.innerHTML = updatedValue;
+               
           }
 
      }
@@ -131,7 +133,7 @@ class PokeBalls{
         }
 
 
-        resetTimer(pk){
+        resetTimer(){
             clearInterval(timer);
 
              seconds.innerHTML = "0";
@@ -140,12 +142,15 @@ class PokeBalls{
 
   
             matched.length = "0";
-            moves.innerHTML ="0";
-  
-             pk.classList.remove('match','open','ani')
-             pk.classList.add('hide-it');
-             pk.children[0].classList.add('hide-it');
+            moves.innerHTML = "0";
+            
+            const balls = Array.from(pokeballs);
+            balls.forEach(function(ball){
+                ball.classList.remove('match','open','ani');
+                ball.classList.add('hide-it');
+                ball.children[0].classList.add('hide-it');
 
+            });
              
 
         }
@@ -153,9 +158,10 @@ class PokeBalls{
 
         won(){
             if(matched.length == 16){
-             //stop timer if all cards have been matched
-            this.stopTimer();
-            alert("You have Won");
+
+                this.resetTimer();
+                this.renderShuffled();
+                console.log("You have Won");
             }
 
             
