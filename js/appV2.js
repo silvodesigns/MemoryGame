@@ -6,12 +6,8 @@ class PokeBalls{
         this.pokeCard.addEventListener('click', () => this.addToList());
         this.pokeCard.addEventListener('click', () => this.updateMoves());
         this.pokeCard.addEventListener('click', () => this.rating());
-        reset.addEventListener('click', function(){
-
-
-
-            });
-
+        reset.addEventListener('click', ()  => this.resetTimer(pokeCard));
+        reset.addEventListener('click', ()  => this.renderShuffled());
 
     }
 
@@ -134,13 +130,22 @@ class PokeBalls{
         }
 
 
-        resetTimer(){
+        resetTimer(pk){
             clearInterval(timer);
 
              seconds.innerHTML = "0";
              minutes.innerHTML = "0";
              hours.innerHTML = "0";
 
+  
+            matched.length = "0";
+            moves.innerHTML ="0";
+  
+             pk.classList.remove('match','open','ani')
+             pk.classList.add('hide-it');
+             pk.children[0].classList.add('hide-it');
+
+             
 
         }
 
@@ -155,7 +160,7 @@ class PokeBalls{
             
         }
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+        // Shuffle function from http://stackoverflow.com/a/2450976
         shuffle(array){
 
             var currentIndex = array.length,
@@ -173,6 +178,16 @@ class PokeBalls{
 
 
          }
+
+         renderShuffled(){
+             const shuffled = this.shuffle(pokeballs);
+             for (i = 0; i < shuffled.length; i++) {
+                deck.appendChild(shuffled[i]);
+            }
+             
+             
+
+         }
         
 }
 let pokeballs = document.querySelectorAll('.card');
@@ -186,6 +201,7 @@ let minutes = document.getElementById("minutes");
 let hours = document.getElementById("hours");
 var timer;
 const reset = document.getElementById("reset");
+const deck = document.getElementById("deck"); //parent element
 
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
