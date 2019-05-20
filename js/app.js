@@ -7,7 +7,6 @@ const matchCards = []; // matchCards array holds all cards that have matched
 const moves = document.getElementById("moves");
 const starts = document.getElementsByClassName("stars");//holds all the starts displayed on page
 const seconds = document.getElementById("seconds");// these following 3 variables hold the elements holding current timer 
-const minutes = document.getElementById("minutes");//
 const hours = document.getElementById("hours");//
 
 //sets a timer 
@@ -37,19 +36,19 @@ const hours = document.getElementById("hours");//
 // }
 
 
-function resetTimer(){
+// function resetTimer(){
 
 
-    clearTimeout(myVar);
+//     clearTimeout(myVar);
 
-    seconds.innerHTML = "0";
-    minutes.innerHTML = "0";
-    hours.innerHTML = "0";
+//     seconds.innerHTML = "0";
+//     minutes.innerHTML = "0";
+//     hours.innerHTML = "0";
 
-    myVar = setInterval(myTimer, 1000);//set timer again
+//     myVar = setInterval(myTimer, 1000);//set timer again
 
 
-}
+// }
 
 
 /*
@@ -138,109 +137,109 @@ reset.addEventListener('click', function() {
 // }
 
 //won function displays a screen to the user after the game has been won
-function won() {
+// function won() {
 
 
-    if (matchCards.length == 16) {
+//     if (matchCards.length == 16) {
 
-        clearTimeout(myVar);
+//         clearTimeout(myVar);
 
-        const screen = document.getElementsByClassName("win");
-        const results = document.createElement("div");
-        const score =  starts[0].children[0];
+//         const screen = document.getElementsByClassName("win");
+//         const results = document.createElement("div");
+//         const score =  starts[0].children[0];
 
-        const text = document.createElement("h1");
-        text.textContent ="You have Won";
+//         const text = document.createElement("h1");
+//         text.textContent ="You have Won";
 
-        const playAgain = document.createElement("button");
-        playAgain.textContent ="Play Again";
-        playAgain.setAttribute("id","play");
+//         const playAgain = document.createElement("button");
+//         playAgain.textContent ="Play Again";
+//         playAgain.setAttribute("id","play");
 
-        screen[0].appendChild(text);
-        screen[0].appendChild(playAgain);
+//         screen[0].appendChild(text);
+//         screen[0].appendChild(playAgain);
 
 
                 
               
 
-        screen[0].classList.remove("hide-it")
-        screen[0].appendChild(results);
-        results.setAttribute("id","final-score");
+//         screen[0].classList.remove("hide-it")
+//         screen[0].appendChild(results);
+//         results.setAttribute("id","final-score");
 
 
 
 
-        //these conditional statements below check the remaining starts at end of game and displays score accordingly
-        if(starts[0].children.length == 3){
-            document.getElementById("final-score").innerHTML =`
-                <h2>final score</h2>
-                <img src="./img/star.png" class="star-result"/>
-                <img src="./img/star.png" class="star-result"/>
-                <img src="./img/star.png" class="star-result"/>
-            `;
+//         //these conditional statements below check the remaining starts at end of game and displays score accordingly
+//         if(starts[0].children.length == 3){
+//             document.getElementById("final-score").innerHTML =`
+//                 <h2>final score</h2>
+//                 <img src="./img/star.png" class="star-result"/>
+//                 <img src="./img/star.png" class="star-result"/>
+//                 <img src="./img/star.png" class="star-result"/>
+//             `;
 
-        }
+//         }
 
-         if(starts[0].children.length == 2){
-            document.getElementById("final-score").innerHTML =`
-                <h2>final score</h2>
-                <img src="./img/star.png" class="star-result"/>
-                <img src="./img/star.png" class="star-result"/>
-            `;
+//          if(starts[0].children.length == 2){
+//             document.getElementById("final-score").innerHTML =`
+//                 <h2>final score</h2>
+//                 <img src="./img/star.png" class="star-result"/>
+//                 <img src="./img/star.png" class="star-result"/>
+//             `;
 
-        }
-
-
-          if(starts[0].children.length == 1){
-            document.getElementById("final-score").innerHTML =`
-                <h2>final score</h2>
-                <img src="./img/star.png" class="star-result"/>
-            `;
+//         }
 
 
-
-             // is fired when the users clicks on the play again button
-
-
-        }
+//           if(starts[0].children.length == 1){
+//             document.getElementById("final-score").innerHTML =`
+//                 <h2>final score</h2>
+//                 <img src="./img/star.png" class="star-result"/>
+//             `;
 
 
 
-
-        const finalSec = seconds.textContent;
-        const finalMin =  minutes.textContent;
-        const finalHour = hours.textContent;
-
-        const resultsTimer = document.createElement("div");
-        screen[0].appendChild(resultsTimer);
-        resultsTimer.setAttribute("id","time");
-
-        document.getElementById("time").innerHTML= `
-
-        <h2>final time</h2>
-        <span>`+finalHour+`</span>
-        <span>:</span>
-        <span>`+finalMin+`</span>
-        <span>:</span>
-        <span>`+finalSec+`</span>
+//              // is fired when the users clicks on the play again button
 
 
+//         }
+
+
+
+
+//         const finalSec = seconds.textContent;
+//         const finalMin =  minutes.textContent;
+//         const finalHour = hours.textContent;
+
+//         const resultsTimer = document.createElement("div");
+//         screen[0].appendChild(resultsTimer);
+//         resultsTimer.setAttribute("id","time");
+
+//         document.getElementById("time").innerHTML= `
+
+//         <h2>final time</h2>
+//         <span>`+finalHour+`</span>
+//         <span>:</span>
+//         <span>`+finalMin+`</span>
+//         <span>:</span>
+//         <span>`+finalSec+`</span>
 
 
 
 
 
 
-        `;
+
+
+//         `;
 
        
 
 
 
 
-    }
+//     }
 
-}
+// }
 
 
 

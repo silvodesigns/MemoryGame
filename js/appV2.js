@@ -6,6 +6,11 @@ class PokeBalls{
         this.pokeCard.addEventListener('click', () => this.addToList());
         this.pokeCard.addEventListener('click', () => this.updateMoves());
         this.pokeCard.addEventListener('click', () => this.rating());
+        reset.addEventListener('click', function(){
+
+
+
+            });
 
 
     }
@@ -124,16 +129,50 @@ class PokeBalls{
         
         }
 
+        stopTimer(){
+            clearInterval(timer);
+        }
+
+
+        resetTimer(){
+            clearInterval(timer);
+
+             seconds.innerHTML = "0";
+             minutes.innerHTML = "0";
+             hours.innerHTML = "0";
+
+
+        }
+
 
         won(){
             if(matched.length == 16){
-                //stop timer if all cards have been matched
-                clearInterval(timer);
-                alert("You have Won");
+             //stop timer if all cards have been matched
+            this.stopTimer();
+            alert("You have Won");
             }
 
             
         }
+
+// Shuffle function from http://stackoverflow.com/a/2450976
+        shuffle(array){
+
+            var currentIndex = array.length,
+            temporaryValue, randomIndex;
+    
+                while (currentIndex !== 0) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+            
+                return array;
+
+
+         }
         
 }
 let pokeballs = document.querySelectorAll('.card');
@@ -146,6 +185,7 @@ let seconds = document.getElementById("seconds");
 let minutes = document.getElementById("minutes");
 let hours = document.getElementById("hours");
 var timer;
+const reset = document.getElementById("reset");
 
 pokeballs.forEach(function(ball){
     return new PokeBalls(ball);
