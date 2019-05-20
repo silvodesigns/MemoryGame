@@ -9,6 +9,7 @@ class PokeBalls{
         reset.addEventListener('click', ()  => this.resetTimer(pokeCard));
         reset.addEventListener('click', ()  => this.renderShuffled());
 
+
     }
 
     displaySymbol(){
@@ -163,33 +164,42 @@ class PokeBalls{
         // Shuffle function from http://stackoverflow.com/a/2450976
         shuffle(array){
 
-            var currentIndex = array.length,
-            temporaryValue, randomIndex;
-    
-                while (currentIndex !== 0) {
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex -= 1;
-                    temporaryValue = array[currentIndex];
-                    array[currentIndex] = array[randomIndex];
-                    array[randomIndex] = temporaryValue;
-                }
-            
-                return array;
+        var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
-
-         }
-
-         renderShuffled(){
-             const shuffled = this.shuffle(pokeballs);
-             for (i = 0; i < shuffled.length; i++) {
-                deck.appendChild(shuffled[i]);
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
             }
-             
+        
+            return array;
+
+
+         }  
+
+
+        renderShuffled(){
+                const shuffled = this.shuffle(Array.from(pokeballs));
+                for (var i = 0; i < shuffled.length; i++) {
+                    deck.appendChild(shuffled[i]);
+                }
+               
+        }
+}
+    
+
+
+        
+
+        
              
 
-         }
+         
         
-}
+
 let pokeballs = document.querySelectorAll('.card');
 let opened =[];
 let matched =[];
@@ -208,3 +218,9 @@ pokeballs.forEach(function(ball){
 });
 
 
+
+
+
+
+
+   
