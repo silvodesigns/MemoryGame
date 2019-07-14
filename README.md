@@ -2,6 +2,10 @@
 
 This is my memory game project that I am currently working on. The project belongs to the Front-End Developer course.  In this project , I have to make heavy use of JavaScript in order to manipulate the DOM in order to create a game. I have customized the game with my own images and visuals.
 
+
+<img width="1015" alt="Screen Shot 2019-07-14 at 4 07 43 PM" src="https://user-images.githubusercontent.com/14895538/61188749-b6be5700-a651-11e9-9ce4-42306b49feb6.png">
+
+
 # In order to play 
 
 * When you first load the play, you will encounter the welcome screen.<br>
