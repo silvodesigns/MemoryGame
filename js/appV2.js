@@ -10,10 +10,9 @@ class PokeBalls {
     reset.addEventListener('click', () => this.renderShuffled());
   }
 
-
   // if the Pokeball card that I am clicking on right now
   // has not be opened yet (I check this by looking at its classes)
-  // then add the class 'open' to this card and show the pokeball
+  // then add the class 'open' to this card and show the pokebal
   // image hidden in this card by removing the class 'hide-it'
 
   displaySymbol() {
@@ -28,7 +27,10 @@ class PokeBalls {
     // let's make sure the card has not been matched already in order
     // to avoid bugs
 
-    if (this.pokeCard.classList.contains('open') == true && this.pokeCard.classList.contains('match') == false) {
+    if (
+      this.pokeCard.classList.contains('open') == true
+      && this.pokeCard.classList.contains('match') == false
+    ) {
       opened.push(this.pokeCard);
       if (opened.length > 1) {
         opened.splice(2, 1);
@@ -37,12 +39,14 @@ class PokeBalls {
     }
   }
 
-
   compare() {
     // compare the two pokeCards that are inside the opened array
     // by comparing its dataset value and id attribure
 
-    if (opened[0].dataset.ball == opened[1].dataset.ball && opened[0].getAttribute('id') !== opened[1].getAttribute('id')) {
+    if (
+      opened[0].dataset.ball == opened[1].dataset.ball
+      && opened[0].getAttribute('id') !== opened[1].getAttribute('id')
+    ) {
       if (matched.indexOf(opened[0]) > -1 && matched.indexOf(opened[1]) > -1) {
         console.log('dont push');
       } else {
@@ -70,7 +74,10 @@ class PokeBalls {
   }
 
   updateMoves() {
-    if (this.pokeCard.classList.contains('open') == true && this.pokeCard.classList.contains('match') == false) {
+    if (
+      this.pokeCard.classList.contains('open') == true
+      && this.pokeCard.classList.contains('match') == false
+    ) {
       const movesValue = moves.textContent;
       let updatedValue = parseInt(movesValue);
 
@@ -82,7 +89,6 @@ class PokeBalls {
         updatedValue += 1;
         moves.innerHTML = updatedValue;
       }
-
 
       // start the timer once at least a move has been done
       if (updatedValue === 1) {
@@ -132,14 +138,12 @@ class PokeBalls {
     clearInterval(timer);
   }
 
-
   static resetTimer() {
     clearInterval(timer);
 
     seconds.innerHTML = '0';
     minutes.innerHTML = '0';
     hours.innerHTML = '0';
-
 
     matched.length = '0';
     moves.innerHTML = '0';
@@ -152,9 +156,8 @@ class PokeBalls {
     });
   }
 
-
   won() {
-    if (matched.length == 16) {
+    if (matched.length === 16) {
       this.renderShuffled();
       this.resetTimer();
     }
@@ -163,8 +166,8 @@ class PokeBalls {
   // Shuffle function from http://stackoverflow.com/a/2450976
   static shuffle(array) {
     let currentIndex = array.length;
-    let temporaryValue; let
-      randomIndex;
+    let temporaryValue;
+    let randomIndex;
 
     while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -177,7 +180,6 @@ class PokeBalls {
     return array;
   }
 
-
   renderShuffled() {
     const shuffled = this.shuffle(Array.from(pokeballs));
     for (let i = 0; i < shuffled.length; i++) {
@@ -185,7 +187,6 @@ class PokeBalls {
     }
   }
 }
-
 
 let pokeballs = document.querySelectorAll('.card');
 // opened cards will be stored here. A at a time.
