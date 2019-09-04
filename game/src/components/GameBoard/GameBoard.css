@@ -1,0 +1,238 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #ffffff url("./img/geometry.png"); /* Background pattern from Subtle Patterns */
+    font-family: "Coda", cursive;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  /*
+   * Styles for the deck of cards
+   */
+  
+  .deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(90deg, #fff 50%, #e00442 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+  }
+  
+  .deck .card {
+    height: 125px;
+    width: 125px;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  }
+  
+  .deck .card.open {
+    cursor: default;
+    background-color: #f4ea4e;
+  }
+  
+  .deck .card.match {
+    cursor: default;
+    background: #545658;
+    font-size: 32px;
+    transition: background 0.7s;
+  }
+  
+  .hide-it {
+    display: none;
+  }
+  
+  /*
+   * Styles for the Score Panel
+   */
+  
+  .score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+  }
+  
+  .score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+  }
+  
+  .score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+  }
+  
+  .score-panel .restart {
+    float: right;
+    cursor: pointer;
+  }
+  
+  /*
+   * Styles for the message screen
+   */
+  
+  .win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 900px;
+    z-index: 999;
+    background: rgba(216, 205, 102, 0.7);
+    text-align: center;
+  }
+  
+  .win h1 {
+    padding-top: 20%;
+    font-size: 5em;
+    color: #fff;
+  }
+  
+  .win button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .win button:hover {
+    background-color: #ca1ed9;
+    cursor: pointer;
+  }
+  
+  .star-result {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .welcome-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    z-index: 999;
+    background: #fff;
+    text-align: center;
+    transition: transform 1s ease-in;
+  }
+  
+  #header {
+    background-color: black;
+    color: white;
+    height: 110px;
+    font-size: 3em;
+    margin-bottom: 80px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  }
+  
+  .play,
+  .instruction {
+    border: none;
+    font-size: 1.5em;
+    background-color: black;
+    display: block;
+    margin: 5px;
+    width: 300px;
+    color: white;
+    transition: font-size 0.7s;
+  }
+  
+  .play:hover,
+  .instruction:hover {
+    cursor: pointer;
+    background-color: red;
+    font-size: 2em;
+  }
+  
+  .move-it {
+    transform: translate(0px, -2000px);
+  }
+  
+  .how-to-play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    z-index: 999;
+    background: #fff;
+    text-align: center;
+    transition: transform 1s ease-in;
+    display: none;
+  }
+  
+  .show-it {
+    display: block;
+  }
+  
+  /*
+   * Styles for animations
+   */
+  
+  /* The animation code */
+  @keyframes example {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(10deg);
+    }
+  }
+  
+  /* The element to apply the animation to */
+  .ani {
+    animation-name: example;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+  }
+  
