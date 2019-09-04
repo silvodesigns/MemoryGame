@@ -1,10 +1,16 @@
 import React from 'react';
+import HeaderTimer from './HeaderTimer.js';
+import HeaderStars from './HeaderStars.js';
+import HeaderMoves from './HeaderMoves.js';
+import './GameHeader.css';
 
 function GameHeader() {
     return (
 
         <div className="game-header">
-            <p>This is the header</p>
+            <HeaderTimer />
+            <HeaderStars />
+            <HeaderMoves />
         </div>
 
     );

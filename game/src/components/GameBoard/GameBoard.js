@@ -28,10 +28,8 @@ function GameBoard() {
         <source src="audio/theme.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio> */}
-            <header>
-                <img class="logo" src={require("./img/logo.png")} />
-            </header>
-            <section class="score-panel">
+
+            {/* <section class="score-panel">
                 <ul id="stars" class="stars">
                     <li><i class="fa fa-star"></i></li>
                     <li><i class="fa fa-star"></i></li>
@@ -41,14 +39,8 @@ function GameBoard() {
         <div id="reset" class="restart">
                     <i class="fa fa-repeat"></i>
                 </div>
-                <div>
-                    <span id="hours">0</span>
-                    <span>:</span>
-                    <span id="minutes">0</span>
-                    <span>:</span>
-                    <span id="seconds">0</span>
-                </div>
-            </section>
+              
+            </section> */}
             <ul id="deck" class="deck">
                 <li class="card" id="1" data-ball="ball0">
                     <img class="hide-it" src={require('./img/ball0.png')} />
