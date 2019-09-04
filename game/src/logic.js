@@ -204,3 +204,6 @@ const reset = document.getElementById('reset');
 const deck = document.getElementById('deck'); // parent element
 
 pokeballs.forEach(ball => new PokeBalls(ball));
+
+
+console.log(pokeballs);
