@@ -4,13 +4,16 @@ import HeaderStars from './HeaderStars.js';
 import HeaderMoves from './HeaderMoves.js';
 import './GameHeader.css';
 
-function GameHeader() {
+const GameHeader = props => {
+
+    console.log(props, "from GameHeader");
+
     return (
 
         <div className="game-header">
             <HeaderTimer />
             <HeaderStars />
-            <HeaderMoves />
+            <HeaderMoves counter={props.counter} />
         </div>
 
     );
