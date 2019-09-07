@@ -1,18 +1,24 @@
 import React from 'react';
 import './GameHeader.css';
 
-function HeaderTimer() {
-    return (
 
-        <div className="board-timer">
-            <span id="hours">0</span>
-            <span>:</span>
-            <span id="minutes">0</span>
-            <span>:</span>
-            <span id="seconds">0</span>
-        </div>
+const ms = require('pretty-ms');
 
-    );
+class HeaderTimer extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const readTime = ms(this.props.timer);
+        return (
+
+            <div className="board-timer" >
+                {readTime}
+            </div>
+
+        )
+    }
 }
 
 export default HeaderTimer;

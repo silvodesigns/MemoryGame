@@ -1,11 +1,11 @@
 import React from 'react';
 import './GameHeader.css';
 
-function HeaderMoves() {
-    return (
+function HeaderMoves(props) {
 
+    return (
         <div className="board-moves">
-            <p><span>0  </span>Moves</p>
+            <p><span id="moves">{props.counter}</span>Moves</p>
         </div >
 
     );

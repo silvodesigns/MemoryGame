@@ -1,0 +1,28 @@
+.game-controls{
+    display:flex;
+    justify-content: space-around;
+}
+
+.start{
+    font-size:42px;
+    color:white;
+    background-color:black;
+    width:200px;
+    text-align:center;
+}
+
+.pause, .reset{
+    font-size:42px;
+    color:white;
+    background-color:#015395;
+    width:200px;
+    text-align:center;
+}
+
+.start, .pause, .reset {
+    cursor: pointer;
+}
+
+.start:hover, .pause:hover, .reset:hover {
+   background-color: #ffcb05;
+}
