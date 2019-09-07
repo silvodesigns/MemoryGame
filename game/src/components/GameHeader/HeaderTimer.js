@@ -1,15 +1,11 @@
 import React from 'react';
 import './GameHeader.css';
 
-function HeaderTimer() {
+function HeaderTimer(props) {
     return (
 
         <div className="board-timer">
-            <span id="hours">0</span>
-            <span>:</span>
-            <span id="minutes">0</span>
-            <span>:</span>
-            <span id="seconds">0</span>
+            {props.timer}
         </div>
 
     );

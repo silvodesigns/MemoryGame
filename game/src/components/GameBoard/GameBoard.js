@@ -8,12 +8,14 @@ import './GameBoard.css';
 
 
 class GameBoard extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             openedCards: [],
             matchedCards: [],
-            count: 0
+            count: 0,
+            time: 0
         }
 
     }
@@ -126,11 +128,16 @@ class GameBoard extends React.Component {
 
 
 
+
+
+
+
+
     render() {
 
         return (
             <div>
-                <GameHeader counter={this.state.count} />
+                <GameHeader counter={this.state.count} timer={this.state.time} />
 
                 <div className="container">
 
@@ -165,13 +172,13 @@ class GameBoard extends React.Component {
                             <img className="hide-it" alt="pokeball icon" src={require('./img/ball4.png')} />
                         </li>
                         <li onClick={this.callOnClick} className="card" id="10" data-ball="ball4">
-                            <img className=" hide-it" src={require('./img/ball4.png')} />
+                            <img className=" hide-it" alt="pokeball icon" src={require('./img/ball4.png')} />
                         </li>
                         <li onClick={this.callOnClick} className="card" id="11" data-ball="ball5">
-                            <img className="hide-it" src={require('./img/ball5.png')} />
+                            <img className="hide-it" alt="pokeball icon" src={require('./img/ball5.png')} />
                         </li>
                         <li onClick={this.callOnClick} className="card" id="12" data-ball="ball5">
-                            <img className="hide-it" src={require('./img/ball5.png')} />
+                            <img className="hide-it" alt="pokeball icon" src={require('./img/ball5.png')} />
                         </li>
                         <li onClick={this.callOnClick} className="card" id="13" data-ball="ball6">
                             <img className=" hide-it" alt="pokeball icon" src={require('./img/ball6.png')} />

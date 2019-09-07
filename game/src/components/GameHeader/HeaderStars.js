@@ -5,9 +5,9 @@ function HeaderStars() {
     return (
 
         <div className="board-stars">
-            <img className="stars" src={require('./img/star-filled.svg')} />
-            <img className="stars" src={require('./img/star-filled.svg')} />
-            <img className="stars" src={require('./img/star.svg')} />
+            <img className="stars" alt="star icon" src={require('./img/star-filled.svg')} />
+            <img className="stars" alt="star icon" src={require('./img/star-filled.svg')} />
+            <img className="stars" alt="star icon" src={require('./img/star.svg')} />
         </div>
 
     );
