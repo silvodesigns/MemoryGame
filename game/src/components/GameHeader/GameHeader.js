@@ -6,8 +6,6 @@ import './GameHeader.css';
 
 const GameHeader = props => {
 
-    console.log(props, "from GameHeader");
-
     return (
 
         <div className="game-header">

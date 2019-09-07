@@ -7,22 +7,66 @@ import GameControls from '../GameControls/GameControls.js';
 import './GameBoard.css';
 
 
+
+
 class GameBoard extends React.Component {
     constructor(props) {
         super(props);
+
+        this.startTimer = this.startTimer.bind(this)
+        this.stopTimer = this.stopTimer.bind(this)
+        this.resetTimer = this.resetTimer.bind(this)
+
 
         this.state = {
             openedCards: [],
             matchedCards: [],
             count: 0,
-            time: 0
+            time: 0,
+            start: 0,
+            timerActive: false
+
+
         }
 
     }
 
 
+    startTimer = () => {
 
+        this.setState({
+            time: this.state.time,
+            start: Date.now() - this.state.time
+        })
 
+        this.timer = setInterval(() => this.setState({
+            time: Date.now() - this.state.start,
+            timerActive: true
+        }), 1)
+        console.log("start the timer")
+
+    };
+
+    stopTimer = () => {
+        clearInterval(this.timer)
+        this.setState({
+            timerActive: false
+        })
+        console.log("stop the timer")
+
+    }
+
+    resetTimer = () => {
+        clearInterval(this.timer)
+        this.setState({
+            time: 0,
+            start: 0,
+            count: 0,
+            timerActive: false
+        })
+        console.log("reset the timer")
+
+    };
 
     displayCard = event => {
 
@@ -127,12 +171,6 @@ class GameBoard extends React.Component {
 
 
 
-
-
-
-
-
-
     render() {
 
         return (
@@ -140,8 +178,6 @@ class GameBoard extends React.Component {
                 <GameHeader counter={this.state.count} timer={this.state.time} />
 
                 <div className="container">
-
-
 
                     <ul id="deck" className="deck">
                         <li onClick={this.callOnClick} className="card" id="1" data-ball="ball0">
@@ -194,12 +230,10 @@ class GameBoard extends React.Component {
                         </li>
                     </ul>
 
-
-
                 </div>
 
 
-                <GameControls />
+                <GameControls startTimer={this.startTimer} stopTimer={this.stopTimer} resetTimer={this.resetTimer} props={this.state} />
             </div>
 
         );
