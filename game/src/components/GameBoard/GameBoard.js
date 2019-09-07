@@ -21,6 +21,7 @@ class GameBoard extends React.Component {
         this.state = {
             openedCards: [],
             matchedCards: [],
+            matches: 0,
             count: 0,
             time: 0,
             start: 0,
@@ -70,6 +71,8 @@ class GameBoard extends React.Component {
 
     displayCard = event => {
 
+
+
         const pokeCard = event.target;
 
         //if the current pokeball I am clicking has not been opened yet
@@ -96,6 +99,11 @@ class GameBoard extends React.Component {
     }
 
     compare() {
+
+
+
+
+
         // compare the two pokeCards that are inside the opened array
         // by comparing its dataset value and id attribure
         const { openedCards } = this.state;
@@ -123,6 +131,7 @@ class GameBoard extends React.Component {
         //remove the styling and hide them again
         //and empty the property of the state holding the openedCards
 
+
         const { openedCards } = this.state;
 
         openedCards[0].classList.remove('open');
@@ -134,6 +143,7 @@ class GameBoard extends React.Component {
         openedCards[1].children[0].classList.add('hide-it');
 
         this.setState({ openedCards: [] });
+
 
     }
 
@@ -149,10 +159,17 @@ class GameBoard extends React.Component {
         openedCards[1].classList.add('match', 'ani');
 
         const openedCopy = this.state.openedCards;
-        this.setState({ matchedCards: openedCopy });
+
+        this.setState({
+            matchedCards: [this.state.matchedCards.concat([openedCopy])],
+            openedCards: [],
+            matches: this.state.matches + 1
+        })
 
 
-        this.setState({ openedCards: [] });
+
+
+
 
     }
 
@@ -163,8 +180,10 @@ class GameBoard extends React.Component {
 
     callOnClick = event => {
 
-        this.displayCard(event);
-        this.incrementCounter()
+        if (event.target.tagName !== 'IMG') {
+            this.displayCard(event);
+            this.incrementCounter()
+        }
 
 
     }
@@ -172,6 +191,8 @@ class GameBoard extends React.Component {
 
 
     render() {
+
+
 
         return (
             <div>
