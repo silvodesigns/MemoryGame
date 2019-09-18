@@ -44,7 +44,7 @@ class GameBoard extends React.Component {
             time: Date.now() - this.state.start,
             timerActive: true
         }), 1)
-        console.log("start the timer")
+
 
     };
 
@@ -53,7 +53,7 @@ class GameBoard extends React.Component {
         this.setState({
             timerActive: false
         })
-        console.log("stop the timer")
+
 
     }
 
@@ -65,14 +65,26 @@ class GameBoard extends React.Component {
             count: 0,
             timerActive: false
         })
-        console.log("reset the timer")
+
+        this.resetFlippedCards();
 
     };
 
+    resetFlippedCards = () => {
+
+        const pokeBalls = document.getElementsByClassName('card');
+        const balls = Array.from(pokeBalls);
+        balls.forEach((ball) => {
+            ball.classList.remove('match', 'open', 'ani');
+            ball.classList.add('hide-it');
+            ball.children[0].classList.add('hide-it');
+        });
+
+
+
+    }
+
     displayCard = event => {
-
-
-
         const pokeCard = event.target;
 
         //if the current pokeball I am clicking has not been opened yet
@@ -99,11 +111,6 @@ class GameBoard extends React.Component {
     }
 
     compare() {
-
-
-
-
-
         // compare the two pokeCards that are inside the opened array
         // by comparing its dataset value and id attribure
         const { openedCards } = this.state;
@@ -180,7 +187,7 @@ class GameBoard extends React.Component {
 
     callOnClick = event => {
 
-        if (event.target.tagName !== 'IMG') {
+        if (event.target.tagName !== 'IMG' && this.state.timerActive !== false) {
             this.displayCard(event);
             this.incrementCounter()
         }
