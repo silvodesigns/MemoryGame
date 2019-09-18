@@ -39,39 +39,6 @@ class PokeBalls {
         }
     }
 
-    compare() {
-        // compare the two pokeCards that are inside the opened array
-        // by comparing its dataset value and id attribure
-
-        if (
-            opened[0].dataset.ball == opened[1].dataset.ball
-            && opened[0].getAttribute('id') !== opened[1].getAttribute('id')
-        ) {
-            if (matched.indexOf(opened[0]) > -1 && matched.indexOf(opened[1]) > -1) {
-                console.log('dont push');
-            } else {
-                opened.forEach((element) => {
-                    matched.push(element);
-                    element.classList.add('match', 'ani');
-                });
-            }
-            // empty the array holding the
-            // opened pokeball cards once comparison logic is run
-            opened.length = 0;
-            this.won();
-        } else {
-            // if they do not match remove the open class
-            // and add the class 'hide-it' to the pokeball image
-            setTimeout(() => {
-                opened.forEach((element) => {
-                    element.classList.remove('open');
-                    element.children[0].classList.add('hide-it');
-                });
-
-                opened.length = 0;
-            }, 300);
-        }
-    }
 
     updateMoves() {
         if (

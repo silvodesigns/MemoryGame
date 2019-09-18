@@ -10,7 +10,7 @@ const GameHeader = props => {
 
         <div className="game-header">
             <HeaderTimer timer={props.timer} />
-            <HeaderStars />
+            <HeaderStars counter={props.counter} />
             <HeaderMoves counter={props.counter} />
         </div>
 

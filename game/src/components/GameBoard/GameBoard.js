@@ -21,6 +21,7 @@ class GameBoard extends React.Component {
         this.state = {
             openedCards: [],
             matchedCards: [],
+            matches: 0,
             count: 0,
             time: 0,
             start: 0,
@@ -43,7 +44,7 @@ class GameBoard extends React.Component {
             time: Date.now() - this.state.start,
             timerActive: true
         }), 1)
-        console.log("start the timer")
+
 
     };
 
@@ -52,7 +53,7 @@ class GameBoard extends React.Component {
         this.setState({
             timerActive: false
         })
-        console.log("stop the timer")
+
 
     }
 
@@ -64,12 +65,26 @@ class GameBoard extends React.Component {
             count: 0,
             timerActive: false
         })
-        console.log("reset the timer")
+
+        this.resetFlippedCards();
 
     };
 
-    displayCard = event => {
+    resetFlippedCards = () => {
 
+        const pokeBalls = document.getElementsByClassName('card');
+        const balls = Array.from(pokeBalls);
+        balls.forEach((ball) => {
+            ball.classList.remove('match', 'open', 'ani');
+            ball.classList.add('hide-it');
+            ball.children[0].classList.add('hide-it');
+        });
+
+
+
+    }
+
+    displayCard = event => {
         const pokeCard = event.target;
 
         //if the current pokeball I am clicking has not been opened yet
@@ -123,6 +138,7 @@ class GameBoard extends React.Component {
         //remove the styling and hide them again
         //and empty the property of the state holding the openedCards
 
+
         const { openedCards } = this.state;
 
         openedCards[0].classList.remove('open');
@@ -134,6 +150,7 @@ class GameBoard extends React.Component {
         openedCards[1].children[0].classList.add('hide-it');
 
         this.setState({ openedCards: [] });
+
 
     }
 
@@ -149,10 +166,17 @@ class GameBoard extends React.Component {
         openedCards[1].classList.add('match', 'ani');
 
         const openedCopy = this.state.openedCards;
-        this.setState({ matchedCards: openedCopy });
+
+        this.setState({
+            matchedCards: [this.state.matchedCards.concat([openedCopy])],
+            openedCards: [],
+            matches: this.state.matches + 1
+        })
 
 
-        this.setState({ openedCards: [] });
+
+
+
 
     }
 
@@ -163,8 +187,10 @@ class GameBoard extends React.Component {
 
     callOnClick = event => {
 
-        this.displayCard(event);
-        this.incrementCounter()
+        if (event.target.tagName !== 'IMG' && this.state.timerActive !== false) {
+            this.displayCard(event);
+            this.incrementCounter()
+        }
 
 
     }
@@ -172,6 +198,8 @@ class GameBoard extends React.Component {
 
 
     render() {
+
+
 
         return (
             <div>
