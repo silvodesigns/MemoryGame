@@ -2,7 +2,7 @@
   "name": "game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://silvodesigns.github.io/MemoryGame/",
+  "homepage": " https://silvodesigns.github.io/MemoryGame/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "normalize.css": "^8.0.1",
