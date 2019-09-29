@@ -78,7 +78,7 @@ h1 {
   cursor: default;
   background: #545658;
   font-size: 32px;
-  transition: background 0.7s;
+  transition: background 0.5s;
 }
 
 .hide-it {

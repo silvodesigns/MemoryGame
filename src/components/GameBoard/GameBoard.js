@@ -70,6 +70,8 @@ class GameBoard extends React.Component {
         })
 
         this.resetFlippedCards();
+        this.callshuffle();
+
 
     };
 
@@ -115,7 +117,7 @@ class GameBoard extends React.Component {
 
     compare() {
         // compare the two pokeCards that are inside the opened array
-        // by comparing its dataset value and id attribure
+        // by comparing its dataset id attribure
         const { openedCards } = this.state;
 
         if (openedCards.length === 2) {
@@ -127,7 +129,7 @@ class GameBoard extends React.Component {
             } else {
                 console.log("they do not match");
 
-                setTimeout(this.noMatch, 800)
+                setTimeout(this.noMatch, 300)
 
             }
 
@@ -190,8 +192,12 @@ class GameBoard extends React.Component {
 
     callOnClick = event => {
 
+        //if the element I am clicking is not an image and the timer is not active then....
+
         if (event.target.tagName !== 'IMG' && this.state.timerActive !== false) {
+            //display the card
             this.displayCard(event);
+            //increment the score counter
             this.incrementCounter()
         }
 
@@ -215,6 +221,8 @@ class GameBoard extends React.Component {
 
         return array;
 
+
+
     }
 
     callshuffle = () => {
@@ -224,6 +232,8 @@ class GameBoard extends React.Component {
         for (let i = 0; i < shuffled.length; i++) {
             deck.appendChild(shuffled[i]);
         }
+
+        console.log("shuffle has been called");
 
 
     }
