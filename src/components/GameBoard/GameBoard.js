@@ -46,6 +46,9 @@ class GameBoard extends React.Component {
         }), 1)
 
 
+        this.callshuffle();
+
+
     };
 
     stopTimer = () => {
@@ -190,6 +193,36 @@ class GameBoard extends React.Component {
         if (event.target.tagName !== 'IMG' && this.state.timerActive !== false) {
             this.displayCard(event);
             this.incrementCounter()
+        }
+
+
+    }
+
+
+    shuffle = (array) => {
+
+        let currentIndex = array.length;
+        let temporaryValue;
+        let randomIndex;
+
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+
+    }
+
+    callshuffle = () => {
+        const deck = document.getElementById('deck');
+        const pokeballs = document.getElementsByClassName('card');
+        const shuffled = this.shuffle(Array.from(pokeballs));
+        for (let i = 0; i < shuffled.length; i++) {
+            deck.appendChild(shuffled[i]);
         }
 
 
