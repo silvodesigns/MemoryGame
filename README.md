@@ -1,6 +1,9 @@
 # Pokeball Matching Game :+1:
 
-This is my memory game project that I am currently working on. The project belongs to the Front-End Developer course.  In this project , I have to make heavy use of JavaScript in order to manipulate the DOM in order to create a game. I have customized the game with my own images and visuals.
+This version of the Pokemon Game Match Project was done using React JS.
+
+<img width="862" alt="matchgame" src="https://user-images.githubusercontent.com/14895538/65824566-47f89f00-e239-11e9-8b74-e84a599b4027.png">
+
 
 # In order to play 
 
