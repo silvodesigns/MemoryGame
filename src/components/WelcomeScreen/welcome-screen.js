@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../buttons/button.js";
+import Audio from "../GameControls/AudioControl.js";
 import './welcomeScreen.css'
 
 
@@ -10,6 +11,8 @@ function WelcomeScreen() {
                 <img class="wc-logo" src={require("./img/pklogo.png")} />
                 <h1>MATCH THEM ALL</h1>
                 <Button />
+                <Audio />
+
             </div>
         </div>
     );

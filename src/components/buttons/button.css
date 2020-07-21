@@ -11,4 +11,20 @@
     align-items:center;
     justify-content:center;
 
+    animation-duration: 2s;
+    animation-name: growing;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+
 }
+
+
+@keyframes growing {
+    from {
+      width:650px
+    }
+  
+    to {
+      width: 625px;
+    }
+  }
