@@ -5,7 +5,7 @@ function HeaderMoves(props) {
 
     return (
         <div className="board-moves">
-            <p><span id="moves">{props.counter}</span>Moves</p>
+            <span className="moves-number" id="moves">{props.counter}</span><span className="moves-p">moves</span>
         </div >
 
     );
