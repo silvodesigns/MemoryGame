@@ -12,7 +12,7 @@ class GameControls extends React.Component {
 
 
 
-        let start = (this.props.props.time === 0) ? <div className="start" onClick={this.props.startTimer} >START</div> : null;
+        let start = (this.props.props.time === 0) ? <div className="start" onClick={this.props.startTimer} ><p>start</p></div> : null;
         let pause = (this.props.props.timerActive === true) ? <div className="pause" onClick={this.props.stopTimer}>PAUSE</div> : null;
         let reset = (this.props.props.timerActive === true && this.props.props.time !== 0) ? <div className="reset" onClick={this.props.resetTimer} >RESET</div> : null;
         let resume = (this.props.props.time != 0 && !this.props.props.timerActive) ? <div className="start" onClick={this.props.startTimer}>RESUME</div> : null;
