@@ -1,5 +1,5 @@
 .game-header{
-    background-color: #ce3a52;
+    background-color: #CE2029;
     width:100%;
     height:150px;
 
@@ -31,7 +31,15 @@
     margin-left:10px;
 }
 
-.board-moves{
-    font-size:42px;
-    color:white;
+
+.moves-number{
+    color: white;
+    font-size: 64px;
+    font-weight: 700;
+    padding-right:10px;
+
+}
+.moves-p {
+    font-size: 48px;
+    color: #F4D114;
 }

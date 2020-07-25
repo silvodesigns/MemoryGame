@@ -25,14 +25,14 @@ class GameControls extends React.Component {
                 {pause}
                 {reset}
                 {resume}
-                <audio controls="controls" autoPlay="autoplay" loop="loop">
+                {/* <audio controls="controls" autoPlay="autoplay" loop="loop">
                     <source src={require('../../audio/theme.mp3')} type="audio/mp3" />
-                    Your browser does not support the audio element.
-           </audio>
+                    Your browser does not support the audio element. */}
+                {/* </audio> */}
 
 
 
-            </div>
+            </div >
 
 
         )
