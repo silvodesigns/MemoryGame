@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/MemoryGame/static/css/main.4b520c47.chunk.css",
+    "main.js": "/MemoryGame/static/js/main.79f0bb88.chunk.js",
+    "main.js.map": "/MemoryGame/static/js/main.79f0bb88.chunk.js.map",
+    "runtime~main.js": "/MemoryGame/static/js/runtime~main.9665e191.js",
+    "runtime~main.js.map": "/MemoryGame/static/js/runtime~main.9665e191.js.map",
+    "static/js/2.2b1a139e.chunk.js": "/MemoryGame/static/js/2.2b1a139e.chunk.js",
+    "static/js/2.2b1a139e.chunk.js.map": "/MemoryGame/static/js/2.2b1a139e.chunk.js.map",
+    "index.html": "/MemoryGame/index.html",
+    "precache-manifest.539fe90c2e70a22d427101a1db8edb89.js": "/MemoryGame/precache-manifest.539fe90c2e70a22d427101a1db8edb89.js",
+    "service-worker.js": "/MemoryGame/service-worker.js",
+    "static/css/main.4b520c47.chunk.css.map": "/MemoryGame/static/css/main.4b520c47.chunk.css.map",
+    "static/media/ball0.png": "/MemoryGame/static/media/ball0.e3c1428b.png",
+    "static/media/ball1.png": "/MemoryGame/static/media/ball1.219126d0.png",
+    "static/media/ball2.png": "/MemoryGame/static/media/ball2.20ff1937.png",
+    "static/media/ball3.png": "/MemoryGame/static/media/ball3.80bd7ed8.png",
+    "static/media/ball4.png": "/MemoryGame/static/media/ball4.16bfd511.png",
+    "static/media/ball5.png": "/MemoryGame/static/media/ball5.12a883e3.png",
+    "static/media/ball6.png": "/MemoryGame/static/media/ball6.80511eb2.png",
+    "static/media/ball7.png": "/MemoryGame/static/media/ball7.ef78a925.png",
+    "static/media/pklogo.png": "/MemoryGame/static/media/pklogo.8859e86f.png",
+    "static/media/star-filled.svg": "/MemoryGame/static/media/star-filled.3b808953.svg",
+    "static/media/star.svg": "/MemoryGame/static/media/star.88688cf0.svg",
+    "static/media/theme.mp3": "/MemoryGame/static/media/theme.8520e509.mp3"
+  }
+}
