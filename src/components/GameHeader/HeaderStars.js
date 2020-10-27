@@ -36,7 +36,7 @@ class HeaderStars extends React.Component {
 
         return (
 
-            <div>
+            <div className="stars-rating">
                 {perfect_rating}
                 {medium_rating}
                 {low_rating}

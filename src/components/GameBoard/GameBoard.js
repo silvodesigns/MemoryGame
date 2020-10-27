@@ -1,9 +1,6 @@
 import React from 'react';
-
-
 import GameHeader from '../GameHeader/GameHeader.js';
 import GameControls from '../GameControls/GameControls.js';
-
 import './GameBoard.css';
 
 

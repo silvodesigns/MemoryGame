@@ -9,12 +9,19 @@ class HeaderTimer extends React.Component {
         super(props);
     }
 
+    convertMS = (ms) => {
+        var minutes = Math.floor(ms / 60000);
+        var seconds = ((ms % 60000) / 1000).toFixed(0);
+        return (seconds == 60 ? (minutes + 1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+
+    }
+
     render() {
-        const readTime = ms(this.props.timer);
+        const readTime = this.convertMS(this.props.timer)
         return (
 
             <div className="board-timer" >
-                {readTime}
+                <span className="timer-count">{readTime}</span>
             </div>
 
         )
