@@ -178,6 +178,10 @@ class GameBoard extends React.Component {
             matches: this.state.matches + 1
         })
 
+        if (this.state.matchedCards.length == 8) {
+            console.log("You have Won")
+        }
+
 
 
 
