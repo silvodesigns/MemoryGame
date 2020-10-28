@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from "react-router-dom";
 import GameHeader from '../GameHeader/GameHeader.js';
 import GameControls from '../GameControls/GameControls.js';
 import './GameBoard.css';
@@ -175,14 +176,6 @@ class GameBoard extends React.Component {
             matches: this.state.matches + 1
         })
 
-        if (this.state.matchedCards.length == 8) {
-            console.log("You have Won")
-        }
-
-
-
-
-
 
     }
 
@@ -243,7 +236,12 @@ class GameBoard extends React.Component {
 
     render() {
 
-
+        if (this.state.matches == 1) {
+            return <Redirect to={{
+                pathname: "/won",
+                state: { data: [this.state.matches, this.state.count, this.state.time] }
+            }} />
+        }
 
         return (
             <div>
