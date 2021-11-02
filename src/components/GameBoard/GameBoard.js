@@ -236,7 +236,7 @@ class GameBoard extends React.Component {
 
     render() {
 
-        if (this.state.matches == 1) {
+        if (this.state.matches === 8) {
             return <Redirect to={{
                 pathname: "/won",
                 state: { data: [this.state.matches, this.state.count, this.state.time] }

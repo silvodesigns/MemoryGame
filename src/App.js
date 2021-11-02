@@ -13,11 +13,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Route exact path="/" component={WelcomeScreen} />
         <Route path="/play" component={GameBoard} />
         <Route path="/won" component={WinningScreen} />
-      </BrowserRouter>
+      </Router>
 
     </div>
   );
